@@ -5,8 +5,8 @@ This application is made to help reduce gas emissions and the time using public 
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
-* Declan, very excited to be doing this project.
-* Davin, Hi..
+* Declan, very excited to be doing this project!
+* Davin, Hi...
 * ...
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
