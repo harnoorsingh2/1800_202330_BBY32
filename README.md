@@ -2,12 +2,15 @@
 
 ## 1. Project Description
 State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
+
+We are making a carpooling app to help people commute without increassing traffic
+
 This browser based web application to ... 
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
 * ...
-* ...
+* ...Hi I'm Davin
 * ...
 	
 ## 3. Technologies and Resources Used
