@@ -1,18 +1,13 @@
 # Project Title
 
 ## 1. Project Description
-State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-
-We are making a carpooling app to help people commute without increassing traffic
-
-This browser based web application to ... 
+This application is made to help reduce gas emissions and the time using public transit by using carpooling as a service. 
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
+* Declan, very excited to be doing this project.
 * ...
-* ...Hi I'm Davin
 * ...
-	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
 * HTML, CSS, JavaScript
