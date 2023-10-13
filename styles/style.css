@@ -10,17 +10,17 @@ body {
 
 
 .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
-    color: #353b6c;
+    color: #c3caff;
 }
 
 .bg-light {
-    background-color: #616792 !important; /* Medium shade for navbar */
+    background-color: #555c90 !important; /* Medium shade for navbar */
 }
 
 .btn-outline-success {
     color: #bfc9dd;  /*Light shade for text*/
     font-size: 100%;
-    background-color: #959595;  /*Dark shade for primary button background*/
+    background-color: #0a226a;  /*Dark shade for primary button background*/
     border-color: #353b6c;  /*Darkest shade for border*/
     border-width: thin;
 }
@@ -29,6 +29,13 @@ body {
     background-color: #678ff8;
     border-color: #bfc9dd;
 }
+
+#footers {
+    color: #c3caff;
+    background-color: #555c90;
+    font-size: 100%;
+}
+
 
 /*
 .navbar-brand{
