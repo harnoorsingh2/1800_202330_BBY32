@@ -2,6 +2,13 @@ body {
     background-color: #bfc9dd;
 }
 
+.btn-primary {
+    background-color: #616792;
+    outline-color: #353b6c
+}
+
+
+
 .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
     color: #353b6c;
 }
@@ -13,7 +20,7 @@ body {
 .btn-outline-success {
     color: #bfc9dd;  /*Light shade for text*/
     font-size: 100%;
-    background-color: #2a5cfc;  /*Dark shade for primary button background*/
+    background-color: #959595;  /*Dark shade for primary button background*/
     border-color: #353b6c;  /*Darkest shade for border*/
     border-width: thin;
 }
