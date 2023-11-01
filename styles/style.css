@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
+    font-family: 'Roboto', sans-serif;
     background-color: #bfc9dd;
 }
 
@@ -7,7 +10,11 @@ body {
     outline-color: #353b6c
 }
 
-
+.btn {
+    border: none;
+    color: black;
+    font-size: 130%;
+}
 
 .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
     color: #c3caff;
@@ -36,9 +43,29 @@ body {
     font-size: 100%;
 }
 
-
-/*
-.navbar-brand{
-    *font here*
+#quote {
+    outline-style: double;
 }
-*/
+
+#reviews {
+    grid-area: rev;
+}
+
+#about {
+    grid-area: about;
+}
+
+#rides {
+    grid-area: rides;
+}
+
+.cont {
+    width: 95vw;
+    display: grid;
+    justify-content: center;
+    margin: auto;
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 1%;
+    grid-template-areas: 
+    "rev rides about ";
+}

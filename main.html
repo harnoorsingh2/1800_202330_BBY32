@@ -24,7 +24,7 @@
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
     <!-------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
@@ -35,6 +35,7 @@
     <!-------------------------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -44,13 +45,103 @@
     <!------------------------------>
 
     <!-- our own navbar goes here -->
-    <nav id="navbarPlaceholder"></nav>
+    <nav class="navbar bg-light top">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+        <button class="btn"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
+    
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <button class="btn"><i class="fa fa-commenting"></i></button>
+            </li>
+            <li class="nav-item">
+              <button class="btn"><i class="fa fa-bookmark"></i></button>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="btn"><i class="fa fa-cog"></i></button>
+            </li>
+          </ul>
+
+    </nav>
 
     <!-- the body of your page goes here -->
-    <!-- stuff -->
+    <div class="container-fluid  text-dark p-5">
+        <div id="quote" class="container bg-light p-5">
+            <h1 class="display-4">Hello, <span id="name-goes-here"></span></h1>
+            <hr>
+            <p>Quote of the day:<span id="quote-goes-here"></span></p>
+        </div>
+    </div>
+
+    <div class="cont">
+        <div id="reviews">
+            <div class="card h-100">
+                <img src="" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Ride reviews</h5>
+                    <p class="card-text">These are the latest rides reviews from our users.</p>
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">Ride Reviews</button>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 2 mins ago</small>
+                </div>
+            </div>
+        </div>
+        <div id="rides">
+            <div class="card h-100">
+                <img src="" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Rides in your area</h5>
+                    <p class="card-text">The best rides for you.</p>
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">Local Rides</button>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 1 mins ago</small>
+                </div>
+            </div>
+        </div>
+        <div id="about">
+            <div class="card h-100">
+                <img src="" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">About Us</h5>
+                    <p class="card-text">We are a website to help people find the rides they want.</p>
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">More Information</button>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- our own footer goes here-->
-    <nav id="footerPlaceholder"></nav>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">&copy; 2023 TakeMeHome</p>
+        <a href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap" />
+            </svg>
+        </a>
+    </footer>
+
+    <footer class="navbar justify-content-evenly bottom" id="footers">
+        <div class="container py-3">
+            <button class="btn"><i class="fa fa-car"></i></button>
+            <button class="btn"><i class="fa fa-home"></i></button>
+            <button class="btn"><i class="fa fa-globe"></i></button>
+        </div>
+    </footer>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
