@@ -25,8 +25,15 @@
 
     <!-- Google Icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    
+
+
+    <!--Links to firebase...-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" /> 
 
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
     <link rel="stylesheet" href="./styles/style.css">
@@ -90,7 +97,8 @@
             <p class="lead mb-4">Plan and Ride to your Destination.</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">Create Account</button>
-                <button type="button" class="btn btn-outline-success btn-lg px-4 ">Log in</button>
+                <a href="login.html" class="btn btn-info" role="button">Log in</a>
+
             </div>
         </div>
     </div>
@@ -151,7 +159,7 @@
 
     <footer class="navbar justify-content-evenly fixed-bottom" id="footers">
         <div class="container py-3">
-            
+
             <span class="material-icons">directions_car</span>
             <span class="material-icons">home</span>
             <span class="material-icons">map</span>
@@ -180,8 +188,9 @@
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
-
+    <script src="./scripts/FirebaseAPI_BBY32"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/authentication.js"></script>
 </body>
 
 </html>
