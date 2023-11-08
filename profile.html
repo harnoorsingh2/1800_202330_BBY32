@@ -76,55 +76,45 @@
     </nav>
 
     <!-- the body of your page goes here -->
-    <div class="container-fluid  text-dark p-5">
-        <div id="quote" class="container bg-light p-5">
-            <h1 class="display-4">Hello, <span id="name-goes-here"></span></h1>
-            <hr>
-            <p>Quote of the day:<span id="quote-goes-here"></span></p>
-        </div>
-    </div>
+   <div id="profile-container">
+      <h1>User Profile </h1>
+        <form>
+          <!-- profile picture* -->
+          <img id="avatar" src="./images/elmo.jpg" alt="Avatar">
+          <br> <!-- Name -->
+          <fieldset class="mb-3" id="personalInfoFields" disabled>
+          <div class="form-group">
+            <label >Name</label>
+            <input type="text" id="nameInput" class="form-control" placeholder="(Enter your name)">
+          </div>
+          <br> <!-- description -->
+          <div class="form-group">
+            <label>About me</label>
+            <textarea class="form-control" id="descriptionInput" rows="3" placeholder="(Description)"></textarea>
+          </div>
+          <br> <!-- contact info* -->
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="text" class="form-control" id="phoneInput" placeholder="(000-0000-0000)">
+            <br>
+            <label>Email address</label>
+            <input type="email" class="form-control" id="" placeholder="(name@example.com)">
+          </div>
+          <br>
+          <div class="form-group">
+            <label >Car</label>
+            <input type="text" id="carInput" class="form-control" placeholder="(Enter your car model and color)">
+          </div>
+            </fieldset>
+            <div class="d-flex justify-content-end mt-5">
+                <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
+                <span style="width: 10px"></span>
+                <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
+            </div>
 
-    <div class="cont">
-        <div id="reviews">
-            <div class="card h-100">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">Ride reviews</h5>
-                    <p class="card-text">These are the latest rides reviews from our users.</p>
-                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">Ride Reviews</button>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 2 mins ago</small>
-                </div>
-            </div>
-        </div>
-        <div id="rides">
-            <div class="card h-100">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">Rides in your area</h5>
-                    <p class="card-text">The best rides for you.</p>
-                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">Local Rides</button>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 1 mins ago</small>
-                </div>
-            </div>
-        </div>
-        <div id="about">
-            <div class="card h-100">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">About Us</h5>
-                    <p class="card-text">We are a website to help people find the rides they want.</p>
-                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">More Information</button>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
-        </div>
-    </div>
+            <!-- preferences -->
+        </form>
+</div>
 
 
     <!-- our own footer goes here-->
@@ -153,6 +143,7 @@
     <script src="./scripts/script.js"></script>
     <script src="./scripts/authentication.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/profile.js"></script>
 
 </body>
 

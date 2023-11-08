@@ -69,3 +69,20 @@ body {
     grid-template-areas: 
     "rev rides about ";
 }
+
+#avatar {
+  width: 30%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  border-style: inset;
+  border-color: black;
+}
+
+#profile-container {
+  display: flexbox;
+  margin: auto;
+  width: 70%;
+  height: 100%;  
+}
