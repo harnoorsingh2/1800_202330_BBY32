@@ -14,6 +14,7 @@ function populateUserInfo() {
                             var userDescription = userDoc.data().description;
                             var userCar = userDoc.data().car;
                             var userPhone = userDoc.data().phone;
+                            var userEmail = userDoc.data().email;
 
                             //if the data fields are not empty, then write them in to the form.
                             if (userName != null) {
@@ -25,9 +26,13 @@ function populateUserInfo() {
                             if (userCar != null) {
                                 document.getElementById("carInput").value = userCar;
                             }
-                            if (user != null) {
-                                document.getElementById("phoneInput").value = userPhone
+                            if (userPhone != null) {
+                                document.getElementById("phoneInput").value = userPhone;
                             }
+                            if (userEmail != null) {
+                                document.getElementById("emailInput").value = userEmail;
+                            }
+
                         })
                 } else {
                     // No user is signed in.
@@ -51,14 +56,16 @@ function saveUserInfo() {
     userName = document.getElementById('nameInput').value;       //get the value of the field with id="nameInput"
     userDescription = document.getElementById('descriptionInput').value;    
     userCar = document.getElementById('carInput').value; 
-    userPhone = documetn.getElementById('phoneInput').value;      
+    userPhone = document.getElementById('phoneInput').value; 
+    userEmail = document.getElementById('emailInput').value;
 
     //b) update user's document in Firestore
     currentUser.update({
                     name: userName,
                     description: userDescription,
                     car: userCar,
-                    phone: userPhone
+                    phone: userPhone,
+                    email: userEmail
                 })
                 .then(() => {
                     console.log("Document successfully updated!");
