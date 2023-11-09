@@ -37,4 +37,9 @@ function readQuote(day) {
 		       //document.querySelector("#quote-goes-here").innerHTML = dayDoc.data().quote;
       })
 }
-readQuote("Monday");        //calling the function
+const date = new Date();
+
+const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const currentDayOfWeek = daysOfWeek[date.getDay()];
+
+readQuote(currentDayOfWeek);        //calling the function
