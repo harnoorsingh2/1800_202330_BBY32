@@ -76,7 +76,67 @@
     </nav>
 
     <!-- the body of your page goes here -->
+    <div class="centered">
+      <br>
+      <h2>Make a post</h2>
 
+      <!--Save userID to post-->
+
+      <label>Date</label>
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <option selected>(Month)</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+      </select>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="(Day)">
+        <input type="text" class="form-control" placeholder="(Time)">
+      </div>
+
+      <label>Availible Seats</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text">#</span>
+        <input type="text" class="form-control" placeholder="Number of seats availible" aria-label="Number">
+      </div>
+
+      <label>Ride Start</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="XXX Street" aria-label="Start">
+      </div>
+
+      <label>Ride End</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="YYY Street" aria-label="Start">
+      </div>
+
+      <label>Price</label>
+      <div class="input-group mb-3">  
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" placeholder="10" aria-label="Amount (to the nearest dollar)">
+      </div>
+      
+      <label>Vehicle Model</label>
+      <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Vehicle" id="basic-url" aria-describedby="basic-addon3">
+      </div>
+
+      <!--button-->
+      <div class="d-flex justify-content-end mt-5">
+        <span style="width: 10px"></span>
+        <button type="button" class="btn btn-info" onclick="">Post</button>
+      </div>
+    </div>
 
     <!-- our own footer goes here-->
     <footer class="py-3 fixed-bottom">
@@ -108,15 +168,6 @@
             </svg>
         </a>
     </footer>
-
-    <footer class="navbar justify-content-evenly bottom" id="footers">
-        <div class="container py-3">
-            <button class="btn"><i class="fa fa-car"></i></button>
-            <button class="btn"><i class="fa fa-home"></i></button>
-            <button class="btn"><i class="fa fa-globe"></i></button>
-        </div>
-    </footer>
-
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
