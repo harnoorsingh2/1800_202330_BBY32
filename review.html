@@ -24,7 +24,7 @@
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
     <!-------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
@@ -72,21 +72,86 @@
       </nav>
 
     <!-- the body of your page goes here -->
-    <div class="p-5 text-center bg-image rounded-3" id="bgimg" style="
-    background-image: url('https://images.unsplash.com/photo-1557159557-7a93eaadf72a?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aGlnaHdheXxlbnwwfHwwfHx8MA%3D%3D');
-    height: 400px;
-  ">
-  <div class="mask" style="background-color: rgba(145, 145, 145, 0.6);">
-    <div class="d-flex justify-content-center align-items-center h-100">
-      <div class="text-white">
-        <h1 class="mb-3">Rides</h1>
-        <h4 class="mb-3">Find or Post Rides for Your Area.</h4>
-        <a class="btn btn-outline-light btn-lg" href="ridesposted.html" role="button">Post Rides</a>
-        <a class="btn btn-outline-light btn-lg" href="ridessearched.html" role="button">Search Rides</a>
-      </div>
-    </div>
+    <div class="container">
+      <br>
+      <h1>Review for <span id="rideName"> Ride</span></h1>
+      <br>
+      <form>
+          <div class="form-group">
+              <label for="exampleFormControlInput1">Add a title</label>
+              <input type="text" class="form-control" id="title" placeholder="Title">
+          </div><br>
+          <div class="form-group">
+            <div class="card-body">
+              <p>Rate your overall experience:</p>
+              <span class="material-icons star" id="star1">star_outline</span>
+              <span class="material-icons star" id="star2">star_outline</span>
+              <span class="material-icons star" id="star3">star_outline</span>
+              <span class="material-icons star" id="star4">star_outline</span>
+              <span class="material-icons star" id="star5">star_outline</span>
+          </div>
+              <label for="exampleFormControlSelect1">How was the overall ride experience?</label>
+              <select class="form-control" id="experience">
+                  <option>Good</option>
+                  <option>Moderate</option>
+                  <option>Bad</option>
+              </select>
+              <br>
+              <div class="form-group">
+                  <label for="exampleFormControlSelect1">How was the drivers/riders attitude and manners?</label>
+                  <select class="form-control" id="attitude">
+                      <option>Great</option>
+                      <option>Tolerable</option>
+                      <option>Not Great</option>
+                      <option>Horrible</option>
+                  </select>
+                  <br>
+              </div>
+              <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Write any extra information about the ride:</label>
+                  <textarea class="form-control" id="description" rows="3"></textarea>
+              </div>
+              <br>
+              <!-- Clean Car -->
+              <label>Clean Car <span style="display:inline-block; width: 26pt;"></span></label>
+
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="clean" value="Yes">
+                  <label>Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="clean" value="No">
+                  <label>No</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="clean" value="unSure" checked="">
+                  <label>Not sure</label>
+              </div>
+              <br>
+              <!-- Quick Ride -->
+              <label>Quick Ride <span style="display:inline-block; width: 20pt;"></span></label>
+
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="quick" value="Yes">
+                  <label>Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="quick" value="No">
+                  <label>No</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="quick" value="unSure" checked="">
+                  <label>Not sure</label>
+              </div>
+
+              <br>
+              <div class="d-flex justify-content-end">
+                  <button type="button" class="btn btn-lg btn-primary pull-right"
+                      onclick="writeReview()">Submit</button>
+              </div>
+          </div>
+      </form>
   </div>
-</div>
 
     <!-- our own footer goes here-->
     <footer class="py-3 fixed-bottom">
@@ -124,7 +189,8 @@
     <!---------------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/script.js"></script>
+    <script src="scripts/review.js"></script>
+    <script src="./scripts/profile.js"></script>
 
 </body>
 
