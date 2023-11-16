@@ -83,58 +83,91 @@
       <!--Save userID to post-->
 
       <label>Date</label>
-      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-        <option selected>(Month)</option>
-        <option value="January">January</option>
-        <option value="February">February</option>
-        <option value="March">March</option>
-        <option value="April">April</option>
-        <option value="May">May</option>
-        <option value="June">June</option>
-        <option value="July">July</option>
-        <option value="August">August</option>
-        <option value="September">September</option>
-        <option value="October">October</option>
-        <option value="November">November</option>
-        <option value="December">December</option>
-      </select>
-
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="(Day)">
-        <input type="text" class="form-control" placeholder="(Time)">
+        <select id="monthInput" class="form-select form-select-sm" aria-label=".form-select-sm example">
+          <option selected>(Month)</option>
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select>
+
+        <input type="text" id="dayInput" class="form-control" placeholder="(Day)">
+      </div>
+
+      <label>Time</label>
+      <div class="input-group mb-3">
+          <select id="hourInput" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected>(Hour)</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          <span class="input-group-text">:</span>
+          <select id="minuteInput" class="form-select form-select-sm">
+            <option selected>(Minute)</option>
+            <option value="15">15</option>
+            <option value="30">30</option>
+            <option value="45">45</option>
+          </select>
+
+          <select id="amOrPm" class="form-select form-select-sm">
+            <option selected>(Am/Pm)</option>
+            <option value=" Am">Am</option>
+            <option value=" Pm">Pm</option>
+          </select>
       </div>
 
       <label>Availible Seats</label>
       <div class="input-group mb-3">
         <span class="input-group-text">#</span>
-        <input type="text" class="form-control" placeholder="Number of seats availible" aria-label="Number">
+        <input type="text" id="seats" class="form-control" placeholder="Number of seats availible">
       </div>
 
-      <label>Ride Start</label>
+      <label>From</label>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="XXX Street" aria-label="Start">
+        <input type="text" id="fromCity" class="form-control" placeholder="X City">
+        <input type="text" id="fromStreet" class="form-control" placeholder="X Street">
       </div>
 
-      <label>Ride End</label>
+      <label>To</label>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="YYY Street" aria-label="Start">
+        <input type="text" id="toCity" class="form-control" placeholder="Y City">
+        <input type="text" id="toStreet" class="form-control" placeholder="Y Street">
       </div>
 
       <label>Price</label>
       <div class="input-group mb-3">  
         <span class="input-group-text">$</span>
-        <input type="text" class="form-control" placeholder="10" aria-label="Amount (to the nearest dollar)">
+        <input type="text" id="ridePrice" class="form-control" placeholder="10">
       </div>
       
       <label>Vehicle Model</label>
       <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Vehicle" id="basic-url" aria-describedby="basic-addon3">
+      <input type="text" id="posterVehicle" class="form-control" placeholder="Vehicle" id="basic-url" aria-describedby="basic-addon3">
       </div>
 
       <!--button-->
       <div class="d-flex justify-content-end mt-5">
         <span style="width: 10px"></span>
-        <button type="button" class="btn btn-info" onclick="">Post</button>
+        <button type="button" class="btn btn-info" onclick="savePostInfo()">Post</button>
       </div>
     </div>
 
@@ -175,7 +208,7 @@
     <script src="./scripts/script.js"></script>
     <script src="./scripts/authentication.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/main.js"></script>
+    <script src="./scripts/post.js"></script>
     
 
 </body>
