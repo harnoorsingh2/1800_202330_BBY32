@@ -35,6 +35,7 @@
     <!-------------------------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -45,34 +46,83 @@
 
     <!-- our own navbar goes here -->
     <nav class="navbar bg-light top">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-           <span class="navbar-toggler-icon"></span>
-          </button>
-          <button class="btn"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
-      
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <button class="btn"><i class="fa fa-commenting"></i></button>
-              </li>
-              <li class="nav-item">
-                <button class="btn"><i class="fa fa-bookmark"></i></button>
-              </li>
-              <li class="nav-item dropdown">
-                <button class="btn"><i class="fa fa-cog"></i></button>
-              </li>
-            </ul>
-  
-      </nav>
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- profile button -->
+        <button class="btn">
+          <a class="btn fa fa-user-circle-o" aria-hidden="true" href="./profile.html"></a>
+        </button>
+      <!-- slide in nav menu -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <button class="btn"><i class="fa fa-commenting"></i></button>
+            </li>
+            <li class="nav-item">
+              <button class="btn"><i class="fa fa-bookmark"></i></button>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="btn"><i class="fa fa-cog"></i></button>
+            </li>
+          </ul>
+
+    </nav>
 
     <!-- the body of your page goes here -->
-    <!-- stuff -->
+   <div id="profile-container">
+      <h1>User Profile </h1>
+        <form>
+          <!-- profile picture* -->
+          <img id="avatar" src="./images/elmo.jpg" alt="Avatar">
+          <br> <!-- Name -->
+          <fieldset class="mb-3" id="personalInfoFields" disabled>
+          <div class="form-group">
+            <label >Name</label>
+            <input type="text" id="nameInput" class="form-control" placeholder="(Enter your name)">
+          </div>
+          <br> <!-- description -->
+          <div class="form-group">
+            <label>About me</label>
+            <textarea class="form-control" id="descriptionInput" rows="3" placeholder="(Description)"></textarea>
+          </div>
+          <br> <!-- contact info* -->
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="number" class="form-control" id="phoneInput" placeholder="(000-0000-0000)">
+            <br>
+            <label>Email address</label>
+            <input type="email" class="form-control" id="emailInput" placeholder="(name@example.com)">
+          </div>
+          <br>
+          <div class="form-group">
+            <label >Car</label>
+            <input type="text" id="carInput" class="form-control" placeholder="(Enter your car model and color)">
+          </div>
+            </fieldset>
+            <div class="d-flex justify-content-end mt-5">
+                <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
+                <span style="width: 10px"></span>
+                <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
+            </div>
+            <div class="container">
+              <h1><span id="rideName"></span></h1>
+              <div class="position-relative">
+                  
+                <a class="btn btn-primary position-absolute bottom-0 start-0 m-3" onclick="saveRideDocumentIDAndRedirect()" href="review.html">Write Review</a></button>
+              </div>
+          </div>
+
+            <!-- preferences -->
+        </form>
+</div>
+
 
     <!-- our own footer goes here-->
     <footer class="py-3 fixed-bottom">
@@ -109,8 +159,10 @@
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM32.js"></script>
-    <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/authentication.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/users.js"></script>
 
 </body>
 
