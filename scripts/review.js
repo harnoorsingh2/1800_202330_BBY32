@@ -1,6 +1,6 @@
 var rideDocID = localStorage.getItem("rideDocID");    //visible to all functions on this page
 function getRideName(id) {
-    db.collection("reviews")
+    db.collection("rides")
       .doc(id)
       .get()
       .then((thisRide) => {
@@ -8,15 +8,11 @@ function getRideName(id) {
         document.getElementById("rideName").innerHTML = rideName;
           });
 }
-
 getRideName(rideDocID);
-
-
-
 // Add this JavaScript code to make stars clickable
-
 // Select all elements with the class name "star" and store them in the "stars" variable
 const stars = document.querySelectorAll('.star');
+
 
 // // Iterate through each star element
 // stars.forEach((star, index) => {
@@ -38,7 +34,6 @@ function writeReview() {
     let Description = document.getElementById("description").value;
     let Clean = document.querySelector('input[name="clean"]:checked').value;
     let Quick = document.querySelector('input[name="quick"]:checked').value;
-
     // Get the star rating
     const stars = document.querySelectorAll('.star');
     let Rating = 0;
@@ -47,7 +42,6 @@ function writeReview() {
             Rating++;
         }
     });
-
     console.log(Title, Experience, Attitude, Description, Clean, Quick, Rating);
 
     var user = firebase.auth().currentUser;
@@ -76,22 +70,3 @@ function writeReview() {
         window.location.href = 'review.html';
     }
 }
-
-const allStars = document.querySelectorAll('.star');
-
-allStars.forEach((star, i) => {
-    star.onclick = function() {
-        let current_star_level = i+1;
-
-        allStars.forEach((star, j) => {
-            if (current_star_level >= j+1) {
-                star.innerHTML = '&#9733';
-            } else {
-                star.innerHTML = '&#9734'
-            }
-
-        })
-
-
-    }
-})
