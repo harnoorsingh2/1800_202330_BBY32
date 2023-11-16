@@ -32,7 +32,7 @@ function displayCardsDynamically(collection) {
             allHikes.forEach(doc => { //iterate thru each doc
                 var poster = doc.data().posterName; 
                 var from = doc.data().from;  // get value of the "details" key
-				var to = doc.data().time;    //get unique ID to each hike to be used for fetching right image
+				var to = doc.data().to;    //get unique ID to each hike to be used for fetching right image
                 var hikeLength = doc.data().price; //gets the length field
                 var docID = doc.id;
                 let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
@@ -40,15 +40,13 @@ function displayCardsDynamically(collection) {
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = poster;
                 newcard.querySelector('.card-length').innerHTML = to;
-                newcard.querySelector('.card-text').innerHTML = from;
-                newcard.querySelector('.card-text2').innerHTML = to;
+                newcard.querySelector('.card-text').innerHTML = "From: " + from;
+                newcard.querySelector('.card-text2').innerHTML = "To: " + to;
                 newcard.querySelector('a').href = "eachHike.html?docID="+docID;
                 newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
                 newcard.querySelector('i').onclick = () => saveBookmark(docID);
                 newcard.querySelector('.card-length').innerHTML =
-                    "From: " + doc.data().from
-                newcard.querySelector('.card-length').innerHTML =
-                    "To: " + doc.data().to
+                    "From: " + from
 
                 currentUser.get().then(userDoc => {
 
@@ -60,5 +58,7 @@ function displayCardsDynamically(collection) {
                 //i++;   //Optional: iterate variable to serve as unique ID
             })
         })
+
+
 }
 
