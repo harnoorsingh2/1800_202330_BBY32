@@ -128,3 +128,15 @@ body {
         
         
 }
+
+.star {
+    font-size: 3rem;
+    color: #ffb444;
+    background-color: unset;
+    border: none;
+}
+
+.star:hover {
+    cursor: pointer;
+    
+}

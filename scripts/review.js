@@ -1,6 +1,6 @@
 var rideDocID = localStorage.getItem("rideDocID");    //visible to all functions on this page
 function getRideName(id) {
-    db.collection("rides")
+    db.collection("reviews")
       .doc(id)
       .get()
       .then((thisRide) => {
@@ -76,3 +76,22 @@ function writeReview() {
         window.location.href = 'review.html';
     }
 }
+
+const allStars = document.querySelectorAll('.star');
+
+allStars.forEach((star, i) => {
+    star.onclick = function() {
+        let current_star_level = i+1;
+
+        allStars.forEach((star, j) => {
+            if (current_star_level >= j+1) {
+                star.innerHTML = '&#9733';
+            } else {
+                star.innerHTML = '&#9734'
+            }
+
+        })
+
+
+    }
+})
