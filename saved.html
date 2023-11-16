@@ -72,47 +72,28 @@
       </nav>
 
     <!-- the body of your page goes here -->
-    <div id="profile-container">
-      <h1>User Profile </h1>
-        <form>
-          <!-- profile picture* -->
-          <img id="avatar" src="./images/elmo.jpg" alt="Avatar">
-          <br> <!-- Name -->
-          <fieldset class="mb-3" id="personalInfoFields" disabled>
-          <div class="form-group">
-            <label >Name</label>
-            <input type="text" id="nameInput" class="form-control" placeholder="(Enter your name)">
-          </div>
-          <br> <!-- description -->
-          <div class="form-group">
-            <label>About me</label>
-            <textarea class="form-control" id="descriptionInput" rows="3" placeholder="(Description)"></textarea>
-          </div>
-          <br> <!-- contact info* -->
-          <div class="form-group">
-            <label>Phone number</label>
-            <input type="number" class="form-control" id="phoneInput" placeholder="(000-0000-0000)">
-            <br>
-            <label>Email address</label>
-            <input type="email" class="form-control" id="emailInput" placeholder="(name@example.com)">
-          </div>
-          <br>
-          <div class="form-group">
-            <label >Car</label>
-            <input type="text" id="carInput" class="form-control" placeholder="(Enter your car model and color)">
-          </div>
-            </fieldset>
-            <div class="container">
-              <h1><span id="rideName"></span></h1>
-              <div class="position-relative">
-                  
-                <a class="btn btn-primary position-absolute bottom-0 start-0 m-3" onclick="saveRideDocumentIDAndRedirect()" href="review.html">Write Review</a></button>
-              </div>
-          </div>
-
-            <!-- preferences -->
-        </form>
+     <!-- the body of your page goes here -->
+     <div class="container">
+        <h1>Saved Hikes for <span id=name-goes-here></span></h1>
+        <!-- Here is container for cards  -->
+        <div class="container">
+            <div id="hikeCardGroup" class="row row-cols-auto">
+            </div>
+        </div>
 </div>
+
+<!-- Templates for general use, not displayed -->
+<template id="savedCardTemplate">
+        <div class="card py-2 mx-2 bg-light" style="width: 10rem;">
+            <img class="card-image card-img-top" src=" ..." alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-length">placeholder</p>
+                <br>
+                <a class="btn btn-secondary card-href" id="read-more">Read more ...</a>
+            </div>
+        </div>
+ </template>
 
     <!-- our own footer goes here-->
     <footer class="py-3 fixed-bottom">
@@ -151,8 +132,8 @@
     <script src="./scripts/firebaseAPI_TEAM32.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>
-    <script src="./scripts/users.js"></script>
 
 </body>
 
 </html>
+

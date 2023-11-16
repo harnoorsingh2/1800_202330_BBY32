@@ -42,7 +42,7 @@ function displayCardsDynamically(collection) {
                 newcard.querySelector('.card-length').innerHTML = to;
                 newcard.querySelector('.card-text').innerHTML = "From: " + from;
                 newcard.querySelector('.card-text2').innerHTML = "To: " + to;
-                newcard.querySelector('a').href = "eachHike.html?docID="+docID;
+                newcard.querySelector('a').href = "users.html?docID="+docID;
                 newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
                 newcard.querySelector('i').onclick = () => saveBookmark(docID);
                 newcard.querySelector('.card-length').innerHTML =
