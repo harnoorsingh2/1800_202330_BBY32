@@ -16,8 +16,8 @@ firebase.auth().onAuthStateChanged(user => {
             userPhone = userDoc.data().phone;
             userEmail = userDoc.data().email;
 
-        const userId = firebase.auth().currentUser.uid;
-         savedUserId = userId;
+            const userId = firebase.auth().currentUser.uid;
+            savedUserId = userId;
 
             //if the data fields are not empty, then write them in to the form.
             if (posterCar == null) {
@@ -62,6 +62,6 @@ function savePostInfo() {
             from: fromLocation,
             to: toLocation
         }).then(() => {
-            window.location.href = "submitted.html"; // Redirect
+            window.location.href = "thanks.html"; // Redirect
         });
 }
