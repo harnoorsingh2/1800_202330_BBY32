@@ -150,3 +150,7 @@ body {
     margin-right: 82%;
     flex-direction: column;
 }
+
+.material-icons{
+    cursor: pointer;
+}
