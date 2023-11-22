@@ -26,27 +26,27 @@ function displayCardsDynamically(collection) {
 
     db.collection(collection)   //the collection called "hikes"
         .get()
-        .then(allHikes=> {
+        .then(allposts=> {
             //var i = 1;  //Optional: if you want to have a unique ID for each hike
-            allHikes.forEach(doc => { //iterate thru each doc
+            allposts.forEach(doc => { //iterate thru each doc
                 var poster = doc.data().posterName; 
+                var dt = doc.data().date + " " + doc.data().time;
                 var from = doc.data().from;  // get value of the "details" key
 				var to = doc.data().to;    //get unique ID to each hike to be used for fetching right image
-                var hikeLength = doc.data().price; //gets the length field
+                //var hikeLength = doc.data().price; //gets the length field
                 var docID = doc.id;
                 var posterID = doc.data().posterUID;
                 let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
 
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = poster;
-                newcard.querySelector('.card-length').innerHTML = to;
                 newcard.querySelector('.card-text').innerHTML = "From: " + from;
                 newcard.querySelector('.card-text2').innerHTML = "To: " + to;
                 newcard.querySelector('a').href = "users.html?docID="+posterID;
+                newcard.querySelector('.card-href').href = "eachpost.html?docID="+docID;
                 newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
                 newcard.querySelector('i').onclick = () => saveBookmark(docID);
-                newcard.querySelector('.card-length').innerHTML =
-                    "From: " + from
+                newcard.querySelector('.card-length').innerHTML = dt;
 
                 currentUser.get().then(userDoc => {
 
