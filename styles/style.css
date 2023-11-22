@@ -140,3 +140,13 @@ body {
     cursor: pointer;
     
 }
+
+#btn1 {
+    display:flex;
+    align-items: start;
+    background-color: skyblue;
+    border: 1px solid blue;
+    padding: 10px;
+    margin-right: 82%;
+    flex-direction: column;
+}
