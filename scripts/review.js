@@ -1,3 +1,6 @@
+let params = new URL( window.location.href ); //get URL of search bar
+let reviewedID = params.searchParams.get( "docID" ); //get value for key "id"
+console.log("reviewID" + reviewedID);
 var rideDocID = localStorage.getItem("rideDocID");    //visible to all functions on this page
 function getRideName(id) {
     db.collection("rides")
@@ -53,7 +56,8 @@ function writeReview() {
         // Get the document for the current user.
         db.collection("reviews").add({
             rideDocID: rideDocID,
-            userID: savedUserId,
+            reviewerID: savedUserId,
+            revieweeID: reviewedID,
             title: Title,
             experience: Experience,
             attitude: Attitude,

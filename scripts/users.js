@@ -32,6 +32,7 @@ function populateUserInfo() {
                             if (userEmail != null) {
                                 document.getElementById("emailInput").value = userEmail;
                             }
+                            document.getElementById("rev").href = "review.html?docID=" + ID;
 
                         })
 }
@@ -92,7 +93,7 @@ function populateReviews() {
                 }
                 reviewCard.querySelector(".star-rating").innerHTML = starRating;
 
-                rideCardGroup.appendChild(reviewCard);
+                document.getElementById("reviews-go-here").appendChild(reviewCard);
             });
         });
 }
@@ -103,5 +104,5 @@ function saveRideDocumentIDAndRedirect(){
     let params = new URL(window.location.href) //get the url from the search bar
     let ID = params.searchParams.get("docID");
     localStorage.setItem('rideDocID', ID);
-    window.location.href = 'review.html';
+    window.location.href = 'review.html?docID=' + ID;
 }
