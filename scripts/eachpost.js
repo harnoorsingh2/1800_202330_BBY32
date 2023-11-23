@@ -1,3 +1,18 @@
+var currentUser
+
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            currentUser = db.collection("users").doc(user.uid); //global
+            console.log(currentUser);
+
+            displayCardsDynamically("posts");
+        } else {
+            // No user is signed in.
+            console.log("No user is signed in");
+            window.location.href = "login.html";
+        }
+    })
+
 function displayPostInfo() {
     let params = new URL( window.location.href ); //get URL of search bar
     let ID = params.searchParams.get( "docID" ); //get value for key "id"
@@ -32,8 +47,16 @@ function displayPostInfo() {
 
                 newcard.querySelector('a').href = "users.html?docID="+posterID;
                 newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
-                newcard.querySelector('i').onclick = () => saveBookmark(docID);
+                newcard.querySelector('i').onclick = () => updateBookmark(docID);
                 
+                                    currentUser.get().then(userDoc => {
+                        //get the user name
+                        var bookmarks = userDoc.data().bookmarks;
+                        if (bookmarks.includes(docID)) {
+                           document.getElementById('save-' + docID).innerText = 'bookmark';
+                        }
+                  })
+
                 document.getElementById("info-go-here").appendChild(newcard);
         })
 
@@ -47,62 +70,28 @@ function saveHikeDocumentIDAndRedirect(){
     window.location.href = 'review.html';
 }
 
-// function populateReviews() {
-//     console.log("test");
-//     let hikeCardTemplate = document.getElementById("reviewCardTemplate");
-//     let hikeCardGroup = document.getElementById("reviewCardGroup");
+function updateBookmark(hikeDocID) {
+    currentUser.get().then(userDoc => {
+        let bookmarks = userDoc.data().bookmarks;
+        let iconID = 'save-' + hikeDocID;
+        let isBookmarked = bookmarks.includes(hikeDocID);
 
-//     let params = new URL(window.location.href); // Get the URL from the search bar
-//     let hikeID = params.searchParams.get("docID");
-
-    // // Double-check: is your collection called "Reviews" or "reviews"?
-    // db.collection("reviews")
-    //     .where("hikeDocID", "==", hikeID)
-    //     .get()
-    //     .then((allReviews) => {
-    //         reviews = allReviews.docs;
-    //         console.log(reviews);
-    //         reviews.forEach((doc) => {
-    //             var title = doc.data().title;
-    //             var level = doc.data().level;
-    //             var season = doc.data().season;
-    //             var description = doc.data().description;
-    //             var flooded = doc.data().flooded;
-    //             var scrambled = doc.data().scrambled;
-    //             var time = doc.data().timestamp.toDate();
-    //             var rating = doc.data().rating; // Get the rating value
-    //             console.log(rating)
-
-    //             console.log(time);
-
-    //             let reviewCard = hikeCardTemplate.content.cloneNode(true);
-    //             reviewCard.querySelector(".title").innerHTML = title;
-    //             reviewCard.querySelector(".time").innerHTML = new Date(
-    //                 time
-    //             ).toLocaleString();
-    //             reviewCard.querySelector(".level").innerHTML = `Level: ${level}`;
-    //             reviewCard.querySelector(".season").innerHTML = `Season: ${season}`;
-    //             reviewCard.querySelector(".scrambled").innerHTML = `Scrambled: ${scrambled}`;
-    //             reviewCard.querySelector(".flooded").innerHTML = `Flooded: ${flooded}`;
-    //             reviewCard.querySelector( ".description").innerHTML = `Description: ${description}`;
-
-    //             // Populate the star rating based on the rating value
-                
-	//               // Initialize an empty string to store the star rating HTML
-	// 							let starRating = "";
-	// 							// This loop runs from i=0 to i<rating, where 'rating' is a variable holding the rating value.
-    //             for (let i = 0; i < rating; i++) {
-    //                 starRating += '<span class="material-icons">star</span>';
-    //             }
-	// 							// After the first loop, this second loop runs from i=rating to i<5.
-    //             for (let i = rating; i < 5; i++) {
-    //                 starRating += '<span class="material-icons">star_outline</span>';
-    //             }
-    //             reviewCard.querySelector(".star-rating").innerHTML = starRating;
-
-    //             hikeCardGroup.appendChild(reviewCard);
-    //         });
-    //     });
-// }
-
-// populateReviews();
+        if (isBookmarked) {
+            // Remove bookmark
+            currentUser.update({
+                bookmarks: firebase.firestore.FieldValue.arrayRemove(hikeDocID)
+            }).then(() => {
+                console.log("Bookmark removed for " + hikeDocID);
+                document.getElementById(iconID).innerText = 'bookmark_border';
+            });
+        } else {
+            // Add bookmark
+            currentUser.update({
+                bookmarks: firebase.firestore.FieldValue.arrayUnion(hikeDocID)
+            }).then(() => {
+                console.log("Bookmark added for " + hikeDocID);
+                document.getElementById(iconID).innerText = 'bookmark';
+            });
+        }
+    });
+}
