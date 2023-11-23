@@ -76,7 +76,11 @@
       <h1>User Profile </h1>
         <form>
           <!-- profile picture* -->
-          <img id="avatar" src="./images/elmo.jpg" alt="Avatar">
+          <div>
+          <img src="./images/default.png" id="profile-pic" alt="Avatar">
+          </div>
+          <label class="label2" for="input-file">Update Image</label>
+          <input class="input2" type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
           <br> <!-- Name -->
           <fieldset class="mb-3" id="personalInfoFields" disabled>
           <div class="form-group">
@@ -160,6 +164,8 @@
     <script src="./scripts/authentication.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/profile.js"></script>
+    <script src="./scripts/pfp.js"></script>
+    
 
 </body>
 
