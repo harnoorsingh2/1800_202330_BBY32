@@ -45,32 +45,39 @@
 
     <!-- our own navbar goes here -->
     <nav class="navbar bg-light top">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-           <span class="navbar-toggler-icon"></span>
-          </button>
-          <button class="btn"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
-      
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <button class="btn"><i class="fa fa-commenting"></i></button>
-              </li>
-              <li class="nav-item">
-                <button class="btn"><i class="fa fa-bookmark"></i></button>
-              </li>
-              <li class="nav-item dropdown">
-                <button class="btn"><i class="fa fa-cog"></i></button>
-              </li>
-            </ul>
-  
-      </nav>
-
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- profile button -->
+        <button class="btn">
+          <a class="btn material-icons" aria-hidden="true" href="./profile.html">account_circle</a>
+        </button>
+      <!-- slide in nav menu -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <!-- <a class="btn material-icons">message</a> -->
+            </li>
+            <li class="nav-item">
+              <a class="btn material-icons" type="button" href="saved.html">bookmarks</a>Bookmarks
+            </li>
+            <li class="nav-item dropdown">
+                <a class="btn material-icons" type="button" href="search.html">search</a> Find A Rides
+            </li>
+            <li class="nav-item dropdown">
+                <a class="btn material-icons" type="button" href="post.html">edit_calendar</a>Post A Ride
+            </li>
+            <li class="nav-item dropdown">
+                <!-- <a class="btn material-icons">settings</a> -->
+            </li>
+          </ul>
+    </nav>
     <!-- the body of your page goes here -->
     <!DOCTYPE html>
 <html>
@@ -153,6 +160,7 @@ html {
   <h1>About Us</h1>
   <p>Take Me Home.</p>
   <p>Due to climate change and high fuel emissions, we are creating a carpooling app that is affordable and planet-friendly.</p>
+  <a type="button" class="btn btn-primary btn-lg px-4 gap-3 " href="main.html">Home</a>
 </div>
 
 <h2 style="text-align:center">Our Team</h2>
@@ -197,30 +205,37 @@ html {
   </div>
 </div>
 
+      <footer class="py-3 fixed-bottom">
+        <div class="container text-center">
+            My padded Footer
+        </div>
+        <div class="container">
+            <span class="material-icons">directions_car</span>
+            <span class="material-icons">home</span>
+            <span class="material-icons">map</span>
+        </div>
+    </footer>
+
+    <footer class="navbar justify-content-evenly fixed-bottom" id="footers">
+        <div class="container py-3">
+
+            <a href="directions.html" class="material-icons">directions_car</a>
+            <a href="main.html" class="material-icons">home</a>
+            <a href="map.html" class="material-icons">map</a>
+        </div>
+    </footer>
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">&copy; 2023 TakeMeHome</p>
+        <a href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap" />
+            </svg>
+        </a>
+    </footer>
 </body>
 </html>
-
-
-        <!-- our own footer goes here-->
-        <footer class="py-3 fixed-bottom">
-          <div class="container text-center">
-              My padded Footer
-          </div>
-          <div class="container">
-              <span class="material-icons">directions_car</span>
-              <span class="material-icons">home</span>
-              <span class="material-icons">map</span>
-          </div>
-      </footer>
-  
-      <footer class="navbar justify-content-evenly fixed-bottom" id="footers">
-          <div class="container py-3">
-  
-              <a href="directions.html" class="material-icons">directions_car</a>
-              <a href="main.html" class="material-icons">home</a>
-              <a href="map.html" class="material-icons">map</a>
-          </div>
-      </footer>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
