@@ -5,48 +5,45 @@
     <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App">
 
+    <!------------------------>
     <!-- Required meta tags -->
+    <!------------------------>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap Library CSS CDN go here -->
+    <!------------------------------------------>
+    <!-- Bootstrap Library CSS JS CDN go here -->
+    <!------------------------------------------>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    <!-- Boostrap Library JS CDN  go here -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
         </script>
-    <!-- Other libraries go here -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Link to styles of your own -->
-
-    <!-- Google Icons-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
-    <!--Links to firebase...-->
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" /> 
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <!-------------------------------------------->
+    <!-- Other libraries and styles of your own -->
+    <!-------------------------------------------->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
 <body>
-
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
 
-    <!--Navbar-->
+    <!-- our own navbar goes here -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">TakeMeHome</a>
@@ -61,7 +58,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./search.html">search</a>
+                        <a class="nav-link" href="#">Link</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -87,62 +84,20 @@
             </div>
         </div>
     </nav>
-    <div class="px-4 py-5 my-5 text-center">
-        <img class="d-block mx-auto mb-4" src="./images/car.png" alt="" width="72" height="57">
-        <h1 class="display-5 fw-bold">TakeMeHome</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Plan and Ride to your Destination.</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <a href="createaccount.html" role="button" class="btn btn-primary btn-lg px-4 gap-3 ">Login</button>
-                <a href="login.html" class="btn btn-info" role="button">Create Account</a>
 
-            </div>
-        </div>
+    <!-- the body of your page goes here -->
+    <!-- stuff -->
+    <div class="container">
+        <h1>Let's Login!</h1>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card h-100">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">Ride reviews</h5>
-                    <p class="card-text">These are the latest rides reviews from our users.</p>
-                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">Ride Reviews</button>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 2 mins ago</small>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">Rides in your area</h5>
-                    <p class="card-text">The best rides for you.</p>
-                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">Local Rides</button>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 1 mins ago</small>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">About Us</h5>
-                    <p class="card-text">We are a website to help people find the rides they want.</p>
-                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">More Information</button>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
-        </div>
+    <div>
+        <input type="email" placeholder="email" id="email">
+        <input type="password" placeholder="password" id="password">
+        <button onlick="signIn()" id="signIn">Sign In</button>
     </div>
+   
 
-
-
+    <!-- our own footer goes here-->
     <footer class="py-3 fixed-bottom">
         <div class="container text-center">
             My padded Footer
@@ -173,24 +128,14 @@
         </a>
     </footer>
 
-    <!-- Begin page content -->
-
-
-
-    <!-- Stuff for body goes here -->
-
-
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
-
-    <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI_TEAM32.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/authentication.js"></script>
-    <script>
-        logout();
-    </script>
+    <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/login.js"></script>
 </body>
 
 </html>

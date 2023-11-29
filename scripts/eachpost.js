@@ -51,11 +51,18 @@ function displayPostInfo() {
                 newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
                 newcard.querySelector('i').onclick = () => updateBookmark(docID);
                 
-                                    currentUser.get().then(userDoc => {
+                        currentUser.get().then(userDoc => {
                         //get the user name
                         var bookmarks = userDoc.data().bookmarks;
+                        if (bookmarks == undefined) {
+                            currentUser.update({
+                                bookmarks: firebase.firestore.FieldValue.arrayUnion("none")
+                            })
+                        }
                         if (bookmarks.includes(docID)) {
                            document.getElementById('save-' + docID).innerText = 'bookmark';
+                        } else {
+                        document.getElementById('save-' + docID).innerText = 'bookmark_border';
                         }
                   })
 
@@ -65,12 +72,6 @@ function displayPostInfo() {
 }
 displayPostInfo();
 
-function saveHikeDocumentIDAndRedirect(){
-    let params = new URL(window.location.href) //get the url from the search bar
-    let ID = params.searchParams.get("docID");
-    localStorage.setItem('hikeDocID', ID);
-    window.location.href = 'review.html';
-}
 
 function updateBookmark(hikeDocID) {
     currentUser.get().then(userDoc => {
@@ -97,3 +98,5 @@ function updateBookmark(hikeDocID) {
         }
     });
 }
+
+
