@@ -74,8 +74,10 @@ body {
     "rev rides about ";
 }
 
-#avatar {
-  width: 30%;
+#Avatar {
+  width: 400px;
+  height: 400px;
+  object-fit: scale-down;
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -129,18 +131,7 @@ body {
         
 }
 
-#profile-pic {    
-        width:  500px;
-        height: 500px;
-        object-fit: scale-down;
-        display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  object-fit:contain;
-        
-    
-}
+
 
 .star {
     font-size: 3rem;
