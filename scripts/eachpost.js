@@ -4,8 +4,6 @@ var currentUser
         if (user) {
             currentUser = db.collection("users").doc(user.uid); //global
             console.log(currentUser);
-
-            displayCardsDynamically("posts");
         } else {
             // No user is signed in.
             console.log("No user is signed in");
