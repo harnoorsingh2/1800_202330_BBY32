@@ -97,5 +97,3 @@ function updateBookmark(hikeDocID) {
         }
     });
 }
-
-
