@@ -25,6 +25,7 @@
     <!-------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
@@ -86,10 +87,11 @@
         <form>
           <!-- profile picture* -->
           <div>
-          <img src="./images/default.png" id="profile-pic" alt="Avatar">
+          <img src="./images/default.png" id="Avatar" alt="Avatar"><label id="UpProgress"></label>
           </div>
           <label class="label2" for="input-file">Update Image</label>
           <input class="input2" type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+          <button class="button2" id="savePFP" onclick="savePFPImage()">Save</button>
           <br> <!-- Name -->
           <fieldset class="mb-3" id="personalInfoFields" disabled>
           <div class="form-group">
