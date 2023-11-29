@@ -58,17 +58,19 @@ function displayPostInfo() {
                   })
 
                 document.getElementById("info-go-here").appendChild(newcard);
+
+                currentUser.get().then(userDoc => {
+                    //get the user name
+                    var bookmarks = userDoc.data().bookmarks;
+                    if (bookmarks.includes(docID)) {
+                       document.getElementById('save-' + docID).innerText = 'bookmark';
+                    }
+              })
         })
 
 }
 displayPostInfo();
 
-function saveHikeDocumentIDAndRedirect(){
-    let params = new URL(window.location.href) //get the url from the search bar
-    let ID = params.searchParams.get("docID");
-    localStorage.setItem('hikeDocID', ID);
-    window.location.href = 'review.html';
-}
 
 function updateBookmark(hikeDocID) {
     currentUser.get().then(userDoc => {
@@ -95,3 +97,5 @@ function updateBookmark(hikeDocID) {
         }
     });
 }
+
+

@@ -48,13 +48,14 @@ function displayCardsDynamically(collection) {
                 newcard.querySelector('i').onclick = () => updateBookmark(docID);
                 newcard.querySelector('.card-length').innerHTML = dt;
 
-                    currentUser.get().then(userDoc => {
-                        //get the user name
-                        var bookmarks = userDoc.data().bookmarks;
-                        if (bookmarks.includes(docID)) {
-                           document.getElementById('save-' + docID).innerText = 'bookmark';
-                        }
-                  })
+                currentUser.get().then(userDoc => {
+                    let bookmarks = userDoc.data().bookmarks;
+                    if (bookmarks.includes(docID)) {
+                        document.getElementById('save-' + docID).innerText = 'bookmark';
+                    } else {
+                        document.getElementById('save-' + docID).innerText = 'bookmark_border';
+                    }
+                });
 
                 //attach to gallery, Example: "hikes-go-here"
                 document.getElementById(collection + "-go-here").appendChild(newcard);
@@ -96,3 +97,5 @@ function updateBookmark(hikeDocID) {
         }
     });
 }
+
+
