@@ -37,7 +37,7 @@ function displayCardsDynamically(collection) {
                 var docID = doc.id;
                 var posterID = doc.data().posterUID;
                 let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
-
+                
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = poster;
                 newcard.querySelector('.card-text').innerHTML = "From: " + from;
@@ -45,7 +45,7 @@ function displayCardsDynamically(collection) {
                 newcard.querySelector('a').href = "users.html?docID="+posterID;
                 newcard.querySelector('.card-href').href = "eachpost.html?docID="+docID;
                 newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
-                newcard.querySelector('i').onclick = () => updateBookmark(docID);
+                newcard.querySelector('i').onclick = () => updateBookmark(docID), console.log(docID);;
                 newcard.querySelector('.card-length').innerHTML = dt;
 
                     currentUser.get().then(userDoc => {

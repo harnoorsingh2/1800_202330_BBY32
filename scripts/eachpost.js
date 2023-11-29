@@ -33,6 +33,7 @@ function displayPostInfo() {
                 //var hikeLength = doc.data().price; //gets the length field
                 var docID = doc.id;
                 var posterID = doc.data().posterUID;
+
                 let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
 
                 //update title and text and image
@@ -41,6 +42,7 @@ function displayPostInfo() {
                 newcard.querySelector('.card-length2').innerHTML = "Time: " + time;
                 newcard.querySelector('.card-text').innerHTML = "From: " + from;
                 newcard.querySelector('.card-text2').innerHTML = "To: " + to;
+                newcard.querySelector('.card-textx').innerHTML = "Pickup Location: " + doc.data().pickup;
                 newcard.querySelector('.card-text3').innerHTML = "Availible Seats: " + doc.data().carSeats;//seats
                 newcard.querySelector('.card-text4').innerHTML = "Price: " + doc.data().price;//price
                 newcard.querySelector('.card-text5').innerHTML = "Vehicle: " + doc.data().car;//car

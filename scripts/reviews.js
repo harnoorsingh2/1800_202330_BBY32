@@ -1,5 +1,26 @@
+var savedUserId
+
+
+
 function populateReviews() {
-    console.log("test");
+    firebase.auth().onAuthStateChanged(user => {
+    // Check if user is signed in:
+    if (user) {
+        currentUser = db.collection("users").doc(user.uid)
+
+        currentUser.get()
+        .then(userDoc => {
+            //get the data fields of the user
+            //remove/users/ from thing
+            userName = userDoc.data().name;
+            userPhone = userDoc.data().phone;
+            userEmail = userDoc.data().email;
+
+            const userId = firebase.auth().currentUser.uid;
+            savedUserId = userId;
+            console.log(savedUserId);
+
+                console.log(savedUserId);
     let rideCardTemplate = document.getElementById("reviewCardTemplate");
     let rideCardGroup = document.getElementById("reviewCardGroup");
 
@@ -8,7 +29,7 @@ function populateReviews() {
 
     // Double-check: is your collection called "Reviews" or "reviews"?
     db.collection("reviews")
-        .where("rideDocID", "==", rideID)
+        .where("revieweeID", "==", savedUserId)
         .get()
         .then((allReviews) => {
             reviews = allReviews.docs;
@@ -54,6 +75,12 @@ function populateReviews() {
                 document.getElementById("reviews-go-here").appendChild(reviewCard);
             });
         });
+
+        })
+    }
+})
+
+
 }
 
 populateReviews();

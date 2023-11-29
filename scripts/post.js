@@ -18,6 +18,7 @@ firebase.auth().onAuthStateChanged(user => {
 
             const userId = firebase.auth().currentUser.uid;
             savedUserId = userId;
+            console.log(savedUserId);
 
             //if the data fields are not empty, then write them in to the form.
             if (posterCar == null) {
@@ -48,7 +49,7 @@ function savePostInfo() {
     seats = document.getElementById('seats').value;
     fromLocation = document.getElementById('fromCity').value + " " + document.getElementById('fromStreet').value
     toLocation = document.getElementById('toCity').value + " " + document.getElementById('toStreet').value
-    
+    pickUp = document.getElementById('pickUp').value
 
         // Get the document for the current user.
         db.collection("posts").add({
@@ -60,7 +61,8 @@ function savePostInfo() {
             car: posterCar,
             carSeats: seats,
             from: fromLocation,
-            to: toLocation
+            to: toLocation,
+            pickup: pickUp
         }).then(() => {
             window.location.href = "thanks.html"; // Redirect
         });
