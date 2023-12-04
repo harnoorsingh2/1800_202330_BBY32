@@ -35,7 +35,8 @@ function populateUserInfo() {
 
                         })
                 } else {
-                    // No user is signed in.
+                    
+                    window.location.href = "login.html";
                     console.log ("No user is signed in");
                 }
             });

@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Rubik:wght@300&display=swap');
+
+* {
+    font-size: 15pt;
+    font-family: 'Rubik', sans-serif;
+}
+
+#name-goes-here {
+    font-size: 30pt;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -22,6 +32,7 @@ body {
     border: none;
     color: black;
     font-size: 130%;
+    border-radius: 20px;
 }
 
 .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
