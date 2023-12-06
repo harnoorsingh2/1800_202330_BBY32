@@ -16,6 +16,11 @@ body {
 
 .card {
     outline-style:groove;
+    width: 90%;
+}
+
+.liquid {
+    width: 100%;
 }
 
 .btn {
@@ -69,6 +74,7 @@ body {
 }
 
 .cont {
+    font-size: 80%;
     width: 95vw;
     display: grid;
     justify-content: center;
