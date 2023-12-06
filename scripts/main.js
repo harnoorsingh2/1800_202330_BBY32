@@ -5,8 +5,8 @@ function getNameFromAuth() {
             // Do something for the currently logged-in user here: 
             console.log(user.uid); //print the uid in the browser console
             console.log(user.displayName);  //print the user name in the browser console
-            userName = user.displayName;
-
+            userName = user.displayName.split(' ').slice(0, -1).join(' ');
+            
             //method #1:  insert with JS
             document.getElementById("name-goes-here").innerText = userName;    
 

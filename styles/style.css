@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Rubik:wght@300&display=swap');
+
+* {
+    font-size: 15pt;
+    font-family: 'Rubik', sans-serif;
+}
+
+#name-goes-here {
+    font-size: 30pt;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -27,6 +37,7 @@ body {
     border: none;
     color: black;
     font-size: 130%;
+    border-radius: 20px;
 }
 
 .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
@@ -85,8 +96,10 @@ body {
     "rev rides about ";
 }
 
-#avatar {
-  width: 30%;
+#Avatar {
+  width: 400px;
+  height: 400px;
+  object-fit: scale-down;
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -140,18 +153,7 @@ body {
         
 }
 
-#profile-pic {    
-        width:  500px;
-        height: 500px;
-        object-fit: scale-down;
-        display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  object-fit:contain;
-        
-    
-}
+
 
 .star {
     font-size: 3rem;
@@ -204,5 +206,37 @@ body {
     padding: 12px;
     margin: 10px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.container1 {
+    display:block;
+    justify-content:center;
+  border-radius: 25px;
+  overflow: hidden;
+  text-align:center;
+  background: #989899;
+  padding: 20px; 
+  margin: 10px auto;
+  width: 400px;
+  height: 250px; 
+}
+
+.container2 {
+    display:block;
+    justify-content:center;
+  border-radius: 25px;
+  overflow: hidden;
+  text-align:center;
+  background: #999998;
+  padding: 20px; 
+  margin: 10px auto;
+  width: 400px;
+  height: 250px; 
+}
+
+.btn1 {
+    
+    
     cursor: pointer;
 }
