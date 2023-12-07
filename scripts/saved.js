@@ -107,29 +107,42 @@ function getBookmarks(user) {
         })
 }
 
-function updateBookmark(hikeDocID) {
+function updateBookmark(rideDocID) {
     currentUser.get().then(userDoc => {
         let bookmarks = userDoc.data().bookmarks;
-        let iconID = 'save-' + hikeDocID;
-        let isBookmarked = bookmarks.includes(hikeDocID);
+        let iconID = 'save-' + rideDocID;
+        let isBookmarked = bookmarks.includes(rideDocID);
 
         if (isBookmarked) {
             // Remove bookmark
             currentUser.update({
-                bookmarks: firebase.firestore.FieldValue.arrayRemove(hikeDocID)
+                bookmarks: firebase.firestore.FieldValue.arrayRemove(rideDocID)
             }).then(() => {
-                console.log("Bookmark removed for " + hikeDocID);
+                console.log("Bookmark removed for " + rideDocID);
                 document.getElementById(iconID).innerText = 'bookmark_border';
+                db.collection("posts").doc(rideDocID).get().then(doc => {
+                    console.log("hi" + doc.data().carSeats);
+                    seats = doc.data().carSeats + 1;
+                    db.collection("posts").add({
+                    carSeats: seats
+                    })
+                })
             });
         } else {
             // Add bookmark
             currentUser.update({
-                bookmarks: firebase.firestore.FieldValue.arrayUnion(hikeDocID)
+                bookmarks: firebase.firestore.FieldValue.arrayUnion(rideDocID)
             }).then(() => {
-                console.log("Bookmark added for " + hikeDocID);
+                console.log("Bookmark added for " + rideDocID);
                 document.getElementById(iconID).innerText = 'bookmark';
+                db.collection("posts").doc(rideDocID).get().then(doc => {
+                    console.log("hi" + doc.data().carSeats);
+                    seats = doc.data().carSeats - 1;
+                    db.collection("posts").add({
+                    carSeats: seats
+                    })
             });
-        }
-    });
+        })
+    };
+})
 }
-

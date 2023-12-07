@@ -10,6 +10,7 @@
     font-size: 30pt;
 }
 
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #bfc9dd;
@@ -31,6 +32,13 @@ body {
 
 .liquid {
     width: 100%;
+}
+
+.center {
+    display: grid;
+    grid-column: 100%;
+    grid-row: 100%;
+    justify-content: center;
 }
 
 .btn {
