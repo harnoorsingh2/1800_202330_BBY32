@@ -79,37 +79,41 @@
           </ul>
     </nav>
 
-     <!-- the body of your page goes here -->
+    <!-- the body of your page goes here -->
+
 <div class="container"> 
-        <br>
-        <h1>Your saved rides</h1>
         <!-- Here is the container for cards  -->
         <div class="container">
-            <div id="saved-go-here" class="row row-cols-auto">
+            <br>
+            <a type="button" class="btn btn-primary btn-lg px-4 gap-3 " href="saved.html">Back</a>
+            <div id="info-go-here" class="row row-cols-auto">'
 
             </div>
+            
         </div>
 </div>
 
 <!-- Templates for general use, not displayed -->
-<template id="savedCardTemplate">
+<template id="hikeCardTemplate">
         <div class="card py-2 mx-2" style="width: 100%">
             <div class="card-body">
                 <h5><a class="card-title" type="button" href="users.html">Card title</a></h5>
-                <p class="card-length">At</p>
+                <p class="card-length">Date</p>
+                <p class="card-length2">Time</p>
                 <br/>
-                <p class="card-text">
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                </p>
+                <p class="card-text">example text</p>
                 <p class="card-text2">Some quick example text</p>
-                
-                <a class="btn btn-primary card-href">See more...</a>
+                <p class="card-textx">Some quick example text</p>
+                <p class="card-text3">Some quick example text</p>
+                <p class="card-text4">Some quick example text</p>
+                <p class="card-text5">Some quick example text</p>
                 <i class="material-icons">bookmark_border</i>
             </div>
         </div>
-        <br>
  </template>
+
+
+    <!-- stuff -->
 
     <!-- our own footer goes here-->
     <footer class="py-3 fixed-bottom">
@@ -148,9 +152,8 @@
     <script src="./scripts/firebaseAPI_TEAM32.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>
-    <script src="./scripts/saved.js"></script>
+    <script src="./scripts/eachpost.js"></script>
 
 </body>
 
 </html>
-
