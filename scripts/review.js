@@ -2,13 +2,14 @@ let params = new URL( window.location.href ); //get URL of search bar
 let reviewedID = params.searchParams.get( "docID" ); //get value for key "id"
 console.log("reviewID" + reviewedID);
 var rideDocID = localStorage.getItem("rideDocID");    //visible to all functions on this page
-function getRideName(id) {
-    db.collection("rides")
-      .doc(id)
+function getRideName(reviewedID) {
+    db.collection("users")
+      .doc(reviewedID)
       .get()
       .then((thisRide) => {
         var rideName = thisRide.data().name;
-        document.getElementById("rideName").innerHTML = rideName;
+        console.log("ea" + thisRide.data().name);
+        document.getElementById("rideName").innerHTML = "Review for " + rideName;
           });
 }
 getRideName(rideDocID);

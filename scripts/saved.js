@@ -120,14 +120,7 @@ function updateBookmark(rideDocID) {
             }).then(() => {
                 console.log("Bookmark removed for " + rideDocID);
                 document.getElementById(iconID).innerText = 'bookmark_border';
-                db.collection("posts").doc(rideDocID).get().then(doc => {
-                    console.log("hi" + doc.data().carSeats);
-                    seats = doc.data().carSeats + 1;
-                    db.collection("posts").add({
-                    carSeats: seats
-                    })
-                })
-            });
+                });
         } else {
             // Add bookmark
             currentUser.update({
@@ -135,14 +128,7 @@ function updateBookmark(rideDocID) {
             }).then(() => {
                 console.log("Bookmark added for " + rideDocID);
                 document.getElementById(iconID).innerText = 'bookmark';
-                db.collection("posts").doc(rideDocID).get().then(doc => {
-                    console.log("hi" + doc.data().carSeats);
-                    seats = doc.data().carSeats - 1;
-                    db.collection("posts").add({
-                    carSeats: seats
-                    })
-            });
-        })
-    };
-})
-}
+                    });
+        }
+    });
+    }
