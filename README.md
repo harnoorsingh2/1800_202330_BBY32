@@ -43,11 +43,27 @@ Content of the project folder:
 
 It has the following subfolders and files:
 ├── html                     # Folder for html files
-    
+    aboutus.html             # About us page
+    createaccount.html       # Create an account
+    directions.html          # Post or Search page
+    eachpost.html            # Each post in detail
+    eachpostsaved.html       # Each post booked in detail
+    login.html               # Login page
+    main.html                # Page after login in
+    map.html                 # Hard-coded map page
+    post.html                # Post your ride page
+    profile.html             # Your user profile
+    review.html              # Create review page
+    reviews.html             # All reviews page
+    saved.html               # Your saved/booked rides
+    search.html              # Every post page
+    thanks.html              # Page after leaving review
+    users.html               # All other users page with reviews
 
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /blah.jpg                # Acknowledge source
+    car.png                  # <a href="https://pngtree.com">Png Tree</a>
+    default.png              # <a href="https://pngtree.com">Png Tree</a>
 
 ├── scripts                  # Folder for scripts
     authentication.js        # Firebase authentication.
@@ -89,5 +105,6 @@ Firebase hosting files:
 * <a href="https://fonts.google.com/">Google Fonts</a>
 * <a href="https://stock.adobe.com/images">Adobe Stock Images</a>
 * <a href="https://getbootstrap.com/">Bootstrap</a>
+* <a href="https://fontawesome.com/">Font Awesome</a>
 
 
