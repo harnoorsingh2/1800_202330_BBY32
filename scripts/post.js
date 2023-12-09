@@ -4,14 +4,13 @@ var userPhone;
 var userEmail;
 
 firebase.auth().onAuthStateChanged(user => {
-    // Check if user is signed in:
+    
     if (user) {
         currentUser = db.collection("users").doc(user.uid)
 
         currentUser.get()
         .then(userDoc => {
-            //get the data fields of the user
-            //remove/users/ from thing
+            
             userName = userDoc.data().name;
             userPhone = userDoc.data().phone;
             userEmail = userDoc.data().email;
@@ -20,7 +19,7 @@ firebase.auth().onAuthStateChanged(user => {
             savedUserId = userId;
             console.log(savedUserId);
 
-            //if the data fields are not empty, then write them in to the form.
+            
             if (posterCar == null) {
                 posterCar = userDoc.data().car;
             }
@@ -38,14 +37,17 @@ firebase.auth().onAuthStateChanged(user => {
             }
         })
     } else {
-        // No user is signed in.
+    
         console.log("No user is signed in");
         window.location.href = "login.html";
     }
 })
 
+//---------------------------------------------------
+// Saves the post information into the firebase.
+//---------------------------------------------------
 function savePostInfo() {
-    //a) get user entered values   
+    
     rideDate = document.getElementById('monthInput').value + " " + document.getElementById('dayInput').value;
     rideTime = document.getElementById('hourInput').value + ":" + document.getElementById('minuteInput').value + document.getElementById('amOrPm').value;
     ridePrice = "$" + document.getElementById('ridePrice').value;
@@ -55,7 +57,7 @@ function savePostInfo() {
     toLocation = document.getElementById('toCity').value + " " + document.getElementById('toStreet').value
     pickUp = document.getElementById('pickUp').value
 
-        // Get the document for the current user.
+       
         db.collection("posts").add({
             posterUID: savedUserId,
             posterName: userName,
@@ -68,6 +70,6 @@ function savePostInfo() {
             to: toLocation,
             pickup: pickUp
         }).then(() => {
-            window.location.href = "thanks.html"; // Redirect
+            window.location.href = "thanks.html";
         });
 }

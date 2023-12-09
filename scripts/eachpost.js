@@ -11,28 +11,31 @@ var currentUser
         }
     })
 
+//---------------------------------------------------
+// Shows the post information and accepts bookmarks.
+//---------------------------------------------------
 function displayPostInfo() {
-    let params = new URL( window.location.href ); //get URL of search bar
-    let ID = params.searchParams.get( "docID" ); //get value for key "id"
+    let params = new URL( window.location.href ); 
+    let ID = params.searchParams.get( "docID" );
     console.log( ID );
 
-    let cardTemplate = document.getElementById("hikeCardTemplate"); // Retrieve the HTML element with the ID "hikeCardTemplate" and store it in the cardTemplate variable. 
+    let cardTemplate = document.getElementById("eachPostCardTemplate");
 
-    db.collection("posts")   //the collection called "hikes"
+    db.collection("posts")
         .doc( ID )
         .get()
         .then(doc=> {
-            //var i = 1;  //Optional: if you want to have a unique ID for each hike
+          
                 var poster = doc.data().posterName; 
                 var d = doc.data().date 
                 var time = doc.data().time;
-                var from = doc.data().from;  // get value of the "details" key
-				var to = doc.data().to;    //get unique ID to each hike to be used for fetching right image
-                //var hikeLength = doc.data().price; //gets the length field
+                var from = doc.data().from; 
+				var to = doc.data().to; 
+               
                 var docID = doc.id;
                 var posterID = doc.data().posterUID;
 
-                let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
+                let newcard = cardTemplate.content.cloneNode(true); 
 
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = "Posted by: " + poster;
@@ -70,7 +73,9 @@ function displayPostInfo() {
 }
 displayPostInfo();
 
-
+//---------------------------------------------------
+// Updates bookmarks.
+//---------------------------------------------------
 function updateBookmark(hikeDocID) {
     currentUser.get().then(userDoc => {
         let bookmarks = userDoc.data().bookmarks;
