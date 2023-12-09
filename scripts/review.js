@@ -1,44 +1,43 @@
-let params = new URL( window.location.href ); //get URL of search bar
-let reviewedID = params.searchParams.get( "docID" ); //get value for key "id"
+let params = new URL( window.location.href );
+let reviewedID = params.searchParams.get( "docID" );
 console.log("reviewID" + reviewedID);
-var rideDocID = localStorage.getItem("rideDocID");    //visible to all functions on this page
-function getRideName(reviewedID) {
-    db.collection("users")
-      .doc(reviewedID)
-      .get()
-      .then((thisRide) => {
-        var rideName = thisRide.data().name;
-        console.log("ea" + thisRide.data().name);
-        document.getElementById("rideName").innerHTML = "Review for " + rideName;
-          });
-}
-getRideName(rideDocID);
+var rideDocID = localStorage.getItem("rideDocID");  
 
-// Add this JavaScript code to make stars clickable
+//---------------------------------------------------
+// Gets the name of the person being reviewed
+//---------------------------------------------------
+function getDriverName(reviewedID) {
+    db.collection("users")
+    .doc(reviewedID)
+    .get()
+    .then((thisRide) => {
+        var driverName = thisRide.data().name;
+        console.log("ea" + thisRide.data().name);
+        document.getElementById("rideName").innerHTML = "Review for " + driverName;
+    });
+}
+getDriverName(rideDocID);
 
 // Select all elements with the class name "star" and store them in the "stars" variable
 const stars = document.querySelectorAll('.star');
-
-// Iterate through each star element
 stars.forEach((star, index) => {
-    // Add a click event listener to the current star
     star.addEventListener('click', () => {
         console.log("clicked star");
-        // Fill in clicked star and stars before it
         for (let i = 0; i <= index; i++) {
-            // Change the text content of stars to 'star' (filled)
             document.getElementById(`star${i + 1}`).textContent = 'star';
         }
 
         if (index < 4) {
             for (let i = index; i <= 4; i++) {
-            // Change the text content of stars to 'star' (filled)
             document.getElementById(`star${i + 2}`).textContent = 'star_outline';
         }
         }
     });
 });
 
+//---------------------------------------------------
+// Saves review to the database
+//---------------------------------------------------
 function writeReview() {
     console.log("inside write review");
     let Title = document.getElementById("title").value;
@@ -55,7 +54,7 @@ function writeReview() {
             Rating++;
         }
     });
-    console.log(Title, Experience, Attitude, Description, Clean, Quick, Rating);
+    //console.log(Title, Experience, Attitude, Description, Clean, Quick, Rating);
 
     var user = firebase.auth().currentUser;
     if (user) {
@@ -63,7 +62,7 @@ function writeReview() {
         const uId = firebase.auth().currentUser.uid;
         savedUserId = uId;
 
-        // Get the document for the current user.
+        // saves to reviews collection
         db.collection("reviews").add({
             rideDocID: rideDocID,
             reviewerID: savedUserId,
@@ -74,7 +73,7 @@ function writeReview() {
             description: Description,
             clean: Clean,
             quick: Quick,
-            rating: Rating, // Include the rating in the review
+            rating: Rating,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }).then(() => {
             window.location.href = "thanks.html"; // Redirect to the thanks page

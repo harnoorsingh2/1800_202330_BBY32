@@ -1,13 +1,13 @@
-//Global variable pointing to the current user's Firestore document
 var currentUser;   
 
-//Function that calls everything needed for the main page  
+//------------------------------------------------------------------------------
+// calls all functions
+//------------------------------------------------------------------------------
 function doAll() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            currentUser = db.collection("users").doc(user.uid); //global
+            currentUser = db.collection("users").doc(user.uid);
             console.log(currentUser);
-
             displayCardsDynamically("posts");
         } else {
             // No user is signed in.
@@ -19,26 +19,22 @@ function doAll() {
 doAll();   
 
 //------------------------------------------------------------------------------
-// Input parameter is a string representing the collection we are reading from
+// Dislpays all rides
 //------------------------------------------------------------------------------
 function displayCardsDynamically(collection) {
-    let cardTemplate = document.getElementById("hikeCardTemplate"); // Retrieve the HTML element with the ID "hikeCardTemplate" and store it in the cardTemplate variable. 
-
-    db.collection(collection)   //the collection called "hikes"
+    let cardTemplate = document.getElementById("ridesTemplate"); 
+    db.collection(collection)
         .get()
         .then(allposts=> {
-            //var i = 1;  //Optional: if you want to have a unique ID for each hike
-            allposts.forEach(doc => { //iterate thru each doc
+            allposts.forEach(doc => { 
                 var poster = doc.data().posterName; 
                 var dt = doc.data().date + " " + doc.data().time;
-                var from = doc.data().from;  // get value of the "details" key
-				var to = doc.data().to;    //get unique ID to each hike to be used for fetching right image
-                //var hikeLength = doc.data().price; //gets the length field
+                var from = doc.data().from; 
+				var to = doc.data().to; 
                 var docID = doc.id;
                 var posterID = doc.data().posterUID;
-                let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
-                
-                //update title and text and image
+                let newcard = cardTemplate.content.cloneNode(true); 
+
                 newcard.querySelector('.card-title').innerHTML = poster;
                 newcard.querySelector('.card-text').innerHTML = "From: " + from;
                 newcard.querySelector('.card-text2').innerHTML = "To: " + to;
@@ -62,15 +58,9 @@ function displayCardsDynamically(collection) {
                         document.getElementById('save-' + docID).innerText = 'bookmark_border';
                     }
                 });
-
-                //attach to gallery, Example: "hikes-go-here"
                 document.getElementById(collection + "-go-here").appendChild(newcard);
-
-                //i++;   //Optional: iterate variable to serve as unique ID
             })
         })
-
-
 }
 
 //-----------------------------------------------------------------------------
