@@ -60,7 +60,6 @@ It has the following subfolders and files:
     thanks.html              # Page after leaving review
     users.html               # All other users page with reviews
 
-├── .git                     # Folder for git repo
 ├── images                   # Folder for images
     car.png                  # <a href="https://pngtree.com">Png Tree</a>
     default.png              # <a href="https://pngtree.com">Png Tree</a>
