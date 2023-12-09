@@ -7,7 +7,7 @@ var currentUser
         } else {
             // No user is signed in.
             console.log("No user is signed in");
-            window.location.href = "login.html";
+            window.location.href = "./login.html";
         }
     })
 
@@ -48,7 +48,7 @@ function displayPostInfo() {
                 newcard.querySelector('.card-text4').innerHTML = "Price: " + doc.data().price;//price
                 newcard.querySelector('.card-text5').innerHTML = "Vehicle: " + doc.data().car;//car
 
-                newcard.querySelector('a').href = "users.html?docID="+posterID;
+                newcard.querySelector('a').href = "./users.html?docID="+posterID;
                 newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
                 newcard.querySelector('i').onclick = () => updateBookmark(docID);
                 

@@ -76,10 +76,10 @@ function writeReview() {
             rating: Rating,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }).then(() => {
-            window.location.href = "thanks.html"; // Redirect to the thanks page
+            window.location.href = "./thanks.html"; // Redirect to the thanks page
         });
     } else {
         console.log("No user is signed in");
-        window.location.href = 'review.html';
+        window.location.href = './review.html';
     }
 }

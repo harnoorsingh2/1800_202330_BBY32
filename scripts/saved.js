@@ -67,7 +67,7 @@ function getBookmarks(user) {
             newcard.querySelector('.card-text').innerHTML = "From: " + from;
             newcard.querySelector('.card-text2').innerHTML = "To: " + to;
             newcard.querySelector('a').href = "users.html?docID=" + posterID;
-            newcard.querySelector('.card-href').href = "eachpostsaved.html?docID="+docID;
+            newcard.querySelector('.card-href').href = "./eachpostsaved.html?docID="+docID;
             newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
             newcard.querySelector('i').onclick = () => updateBookmark(docID), console.log(docID);;
             newcard.querySelector('.card-length').innerHTML = dt;

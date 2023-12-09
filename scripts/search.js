@@ -12,7 +12,7 @@ function doAll() {
         } else {
             // No user is signed in.
             console.log("No user is signed in");
-            window.location.href = "login.html";
+            window.location.href = "./login.html";
         }
     });
 }
@@ -38,8 +38,8 @@ function displayCardsDynamically(collection) {
                 newcard.querySelector('.card-title').innerHTML = poster;
                 newcard.querySelector('.card-text').innerHTML = "From: " + from;
                 newcard.querySelector('.card-text2').innerHTML = "To: " + to;
-                newcard.querySelector('a').href = "users.html?docID="+posterID;
-                newcard.querySelector('.card-href').href = "eachpost.html?docID="+docID;
+                newcard.querySelector('a').href = "./users.html?docID="+posterID;
+                newcard.querySelector('.card-href').href = "./eachpost.html?docID="+docID;
                 newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
                 newcard.querySelector('i').onclick = () => updateBookmark(docID), console.log(docID);;
                 newcard.querySelector('.card-length').innerHTML = dt;

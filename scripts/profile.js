@@ -40,7 +40,7 @@ function populateUserInfo() {
                         })
                 } else {
                     
-                    window.location.href = "login.html";
+                    window.location.href = "./login.html";
                     console.log ("No user is signed in");
                 }
             });
@@ -151,5 +151,5 @@ function saveRideDocumentIDAndRedirect(){
     let params = new URL(window.location.href) 
     let ID = params.searchParams.get("docID");
     localStorage.setItem('rideDocID', ID);
-    window.location.href = 'review.html';
+    window.location.href = './review.html';
 }

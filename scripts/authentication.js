@@ -13,7 +13,7 @@ var uiConfig = {
                        school: "Unknown"                         
                 }).then(function () {
                        console.log("New user added to firestore");
-                       window.location.assign("main.html");       
+                       window.location.assign("./main.html");       
                 }).catch(function (error) {
                        console.log("Error adding new user: " + error);
                 });
@@ -28,7 +28,7 @@ var uiConfig = {
     },
 
     signInFlow: 'popup',
-    signInSuccessUrl: "main.html",
+    signInSuccessUrl: "./main.html",
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
       //firebase.auth.GoogleAuthProvider.PROVIDER_ID,

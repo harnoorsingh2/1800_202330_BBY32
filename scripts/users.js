@@ -34,7 +34,7 @@ function populateUserInfo() {
         if (userEmail != null) {
             document.getElementById("emailInput").value = userEmail;
         }
-        document.getElementById("rev").href = "review.html?docID=" + ID;
+        document.getElementById("rev").href = "./review.html?docID=" + ID;
 
     })
 }

@@ -39,7 +39,7 @@ firebase.auth().onAuthStateChanged(user => {
     } else {
     
         console.log("No user is signed in");
-        window.location.href = "login.html";
+        window.location.href = "./login.html";
     }
 })
 
@@ -70,6 +70,6 @@ function savePostInfo() {
             to: toLocation,
             pickup: pickUp
         }).then(() => {
-            window.location.href = "thanks.html";
+            window.location.href = "./thanks.html";
         });
 }
