@@ -45,7 +45,7 @@ It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
     /blah.jpg                # Acknowledge source
-    
+
 ├── scripts                  # Folder for scripts
     authentication.js        # Firebase authentication.
     eachpost.js              # Each Ride Post.
@@ -65,6 +65,8 @@ It has the following subfolders and files:
 ├── styles                   # Folder for styles
     style.css                # Style sheet for the html pages.
 
+├── 
+
 Firebase hosting files: 
 ├── .firebase
 	/hosting..cache
@@ -76,5 +78,15 @@ Firebase hosting files:
 ├── storage.rules
 
 ```
+
+
+## Contacts
+* Declan Joyce - djoyce18@my.bcit.ca
+* Davin Higo - dhigo1@my.bcit.ca
+
+## Acknowledgements 
+* <a href="https://fonts.google.com/">Google Fonts</a>
+* <a href="https://stock.adobe.com/images">Adobe Stock Images</a>
+* <a href="https://getbootstrap.com/">Bootstrap</a>
 
 

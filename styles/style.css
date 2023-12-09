@@ -201,10 +201,7 @@ body {
     background-size: 100%;
     max-width: 100%;
         
-    height: 100%;
-        
-        
-        
+    height: 100%;  
 }
 
 
@@ -290,8 +287,6 @@ body {
   height: 100%; 
 }
 
-.btn1 {
-    
-    
+.btn1 {   
     cursor: pointer;
 }
