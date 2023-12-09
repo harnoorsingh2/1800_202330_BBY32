@@ -7,7 +7,8 @@ function getNameFromAuth() {
         if (user) {
             
             console.log(user.uid); 
-            console.log(user.displayName); 
+            console.log(user.displayName);
+            // Splices name in half, so if u put a first and last name only returns first name.
             userName = user.displayName.split(' ').slice(0, -1).join(' ');
             
            

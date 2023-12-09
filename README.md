@@ -38,10 +38,13 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├──               # landing HTML file, this is what users see when you come to url
-└── README.md
+├── index.html               # landing HTML file, this is what users see when you come to url
+└── README.md                # This page shows the projects information.
 
 It has the following subfolders and files:
+├── html                     # Folder for html files
+    
+
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
     /blah.jpg                # Acknowledge source
@@ -64,8 +67,6 @@ It has the following subfolders and files:
                     
 ├── styles                   # Folder for styles
     style.css                # Style sheet for the html pages.
-
-├── 
 
 Firebase hosting files: 
 ├── .firebase
